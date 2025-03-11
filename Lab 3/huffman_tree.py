@@ -50,3 +50,4 @@ def generate_huffman_codes(node):
             stack.append((current_node.left_child, code + "0"))
 
     return huffman_codes
+
