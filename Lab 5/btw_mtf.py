@@ -7,18 +7,6 @@ def bwt_transform(data):
     transformed = bytes([rotation[-1] for rotation in rotations])
     return transformed, index
 
-#
-with open('test.txt', 'rb') as f:
-    test = f.read()
-
-with open('test_bwt.txt', 'wb') as f:
-    bwt_data, idx = bwt_transform(test)
-    f.write(bwt_data)
-    f.write(bytes([idx]))
-
-with open('test_bwt.txt', 'rb') as f:
-    test = f.read()
-#
 
 def ibwt_transform(transformed, index):
     """Зворотне перетворення BWT"""
@@ -35,11 +23,6 @@ def ibwt_transform(transformed, index):
         res.append(transformed[index])
     return bytes(res)
 
-#
-with open('test_ibwt.txt', 'wb') as f:
-    ibwt_data = ibwt_transform(test[:-1], test[-1])
-    f.write(ibwt_data)
-#
 
 
 # MTF
@@ -48,7 +31,6 @@ def mtf_transform(data):
     alphabet = list(range(256))
     result = []
     for byte in data:
-        # print(byte)
         idx = alphabet.index(byte)
         result.append(idx)
         # Переміщуємо символ на початок
@@ -61,9 +43,7 @@ def imtf_transform(transformed):
     """Зворотне MTF-перетворення"""
     alphabet = list(range(256))
     result = []
-    # print(transformed)
     for idx in transformed:
-        # print(idx)
         byte = alphabet[idx]
         result.append(byte)
         # Оновлюємо алфавіт
