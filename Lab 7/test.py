@@ -23,5 +23,5 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(solve_task2(input_file=input_task2_test7, write2file=False, read_from_file=False), expectet_output_t2t7)
 
 
-# if __name__ == '__main__':
-#     unittest.main()
+if __name__ == '__main__':
+    unittest.main()
