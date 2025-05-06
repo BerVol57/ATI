@@ -1,7 +1,7 @@
 import unittest
 
 from Solver import *
-from test_data import *
+from data import *
 
 class TestStringMethods(unittest.TestCase):
 
